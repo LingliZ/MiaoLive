@@ -8,6 +8,7 @@
 
 #import "MLLoginController.h"
 #import <IJKMediaFramework/IJKMediaFramework.h>
+#import "MLTabbarController.h"
 @interface MLLoginController ()
 /** 快速通道 */
 @property (nonatomic, strong) UIButton *quickBtn;
@@ -110,6 +111,9 @@
 #pragma mark - 内部登录方法
 - (void)loginSuccess{
    //页面消失
-    
+    MLTabbarController *tabbar = [[MLTabbarController alloc] init];
+    [UIApplication sharedApplication].keyWindow.rootViewController = tabbar;
+    [self.player stop];
+    self.player = nil;
 }
 @end

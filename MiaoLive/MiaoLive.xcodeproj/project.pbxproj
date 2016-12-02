@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033C21111DF1A73E00F57A26 /* MLHotController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C21101DF1A73E00F57A26 /* MLHotController.m */; };
+		033C21141DF1A76600F57A26 /* MLNewLivesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C21131DF1A76600F57A26 /* MLNewLivesController.m */; };
+		033C21171DF1A7A600F57A26 /* MLFocusAnchorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C21161DF1A7A600F57A26 /* MLFocusAnchorController.m */; };
+		033C211D1DF1A87200F57A26 /* UIView+ViewFrameExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C211C1DF1A87200F57A26 /* UIView+ViewFrameExt.m */; };
 		03C2E6631DF11EB900BF136F /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C2E6621DF11EB900BF136F /* IJKMediaFramework.framework */; };
 		03D903EF1DEFE27700350569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D903EE1DEFE27700350569 /* main.m */; };
 		03D903F21DEFE27700350569 /* MLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D903F11DEFE27700350569 /* MLAppDelegate.m */; };
@@ -59,6 +63,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033C210F1DF1A73E00F57A26 /* MLHotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHotController.h; sourceTree = "<group>"; };
+		033C21101DF1A73E00F57A26 /* MLHotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHotController.m; sourceTree = "<group>"; };
+		033C21121DF1A76600F57A26 /* MLNewLivesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNewLivesController.h; sourceTree = "<group>"; };
+		033C21131DF1A76600F57A26 /* MLNewLivesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNewLivesController.m; sourceTree = "<group>"; };
+		033C21151DF1A7A600F57A26 /* MLFocusAnchorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLFocusAnchorController.h; sourceTree = "<group>"; };
+		033C21161DF1A7A600F57A26 /* MLFocusAnchorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLFocusAnchorController.m; sourceTree = "<group>"; };
+		033C211B1DF1A87200F57A26 /* UIView+ViewFrameExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewFrameExt.h"; sourceTree = "<group>"; };
+		033C211C1DF1A87200F57A26 /* UIView+ViewFrameExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewFrameExt.m"; sourceTree = "<group>"; };
 		03C2E6621DF11EB900BF136F /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		03D903EA1DEFE27600350569 /* MiaoLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiaoLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D903EE1DEFE27700350569 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -235,6 +247,12 @@
 				03D904241DEFF65800350569 /* View */,
 				03D905291DF00F9500350569 /* MLHomeController.h */,
 				03D9052A1DF00F9500350569 /* MLHomeController.m */,
+				033C210F1DF1A73E00F57A26 /* MLHotController.h */,
+				033C21101DF1A73E00F57A26 /* MLHotController.m */,
+				033C21121DF1A76600F57A26 /* MLNewLivesController.h */,
+				033C21131DF1A76600F57A26 /* MLNewLivesController.m */,
+				033C21151DF1A7A600F57A26 /* MLFocusAnchorController.h */,
+				033C21161DF1A7A600F57A26 /* MLFocusAnchorController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -378,6 +396,8 @@
 		03D905181DF000B600350569 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				033C211B1DF1A87200F57A26 /* UIView+ViewFrameExt.h */,
+				033C211C1DF1A87200F57A26 /* UIView+ViewFrameExt.m */,
 				03D905611DF01E3400350569 /* Http */,
 			);
 			path = Tool;
@@ -676,11 +696,15 @@
 				03D905241DF001C400350569 /* MLAppConst.m in Sources */,
 				03D905161DEFFAEA00350569 /* MLTabbarController.m in Sources */,
 				03D905641DF01E3F00350569 /* MLHttpTool.m in Sources */,
+				033C21111DF1A73E00F57A26 /* MLHotController.m in Sources */,
+				033C21141DF1A76600F57A26 /* MLNewLivesController.m in Sources */,
+				033C21171DF1A7A600F57A26 /* MLFocusAnchorController.m in Sources */,
 				03D903F21DEFE27700350569 /* MLAppDelegate.m in Sources */,
 				03D9052E1DF00FAB00350569 /* MLLiveController.m in Sources */,
 				03D905351DF00FE200350569 /* MLMineController.m in Sources */,
 				03D905281DF00C6D00350569 /* MLAppSkin.m in Sources */,
 				03D9052B1DF00F9500350569 /* MLHomeController.m in Sources */,
+				033C211D1DF1A87200F57A26 /* UIView+ViewFrameExt.m in Sources */,
 				03D903EF1DEFE27700350569 /* main.m in Sources */,
 				03D905381DF011B300350569 /* MLNavigationController.m in Sources */,
 			);
