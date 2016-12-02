@@ -1,0 +1,25 @@
+//
+//  MiaoLive.pch
+//  MiaoLive
+//
+//  Created by 王鑫 on 16/12/1.
+//  Copyright © 2016年 王鑫. All rights reserved.
+//
+
+#ifndef MiaoLive_pch
+#define MiaoLive_pch
+
+/** 导入数据*/
+#import "MJExtension.h"
+#import "AFNetworking.h"
+#import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
+#import "PureLayout.h"
+
+
+#import "MLAppConst.h"
+#import "MLAppDefine.h"
+#import "MLAppSkin.h"
+#import "MLHttpTool.h"
+
+#endif /* MiaoLive_pch */

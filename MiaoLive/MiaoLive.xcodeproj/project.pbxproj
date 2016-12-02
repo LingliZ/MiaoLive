@@ -1,0 +1,952 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03C2E6631DF11EB900BF136F /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C2E6621DF11EB900BF136F /* IJKMediaFramework.framework */; };
+		03D903EF1DEFE27700350569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D903EE1DEFE27700350569 /* main.m */; };
+		03D903F21DEFE27700350569 /* MLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D903F11DEFE27700350569 /* MLAppDelegate.m */; };
+		03D903FA1DEFE27700350569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03D903F91DEFE27700350569 /* Assets.xcassets */; };
+		03D903FD1DEFE27700350569 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D903FB1DEFE27700350569 /* LaunchScreen.storyboard */; };
+		03D904081DEFE27700350569 /* MiaoLiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D904071DEFE27700350569 /* MiaoLiveTests.m */; };
+		03D904131DEFE27700350569 /* MiaoLiveUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D904121DEFE27700350569 /* MiaoLiveUITests.m */; };
+		03D905161DEFFAEA00350569 /* MLTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905151DEFFAEA00350569 /* MLTabbarController.m */; };
+		03D905241DF001C400350569 /* MLAppConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905231DF001C400350569 /* MLAppConst.m */; };
+		03D905281DF00C6D00350569 /* MLAppSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905271DF00C6D00350569 /* MLAppSkin.m */; };
+		03D9052B1DF00F9500350569 /* MLHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9052A1DF00F9500350569 /* MLHomeController.m */; };
+		03D9052E1DF00FAB00350569 /* MLLiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9052D1DF00FAB00350569 /* MLLiveController.m */; };
+		03D905351DF00FE200350569 /* MLMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905341DF00FE200350569 /* MLMineController.m */; };
+		03D905381DF011B300350569 /* MLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905371DF011B300350569 /* MLNavigationController.m */; };
+		03D905641DF01E3F00350569 /* MLHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905631DF01E3F00350569 /* MLHttpTool.m */; };
+		03D9056C1DF0238500350569 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D9056B1DF0238500350569 /* AudioToolbox.framework */; };
+		03D9056E1DF0239700350569 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D9056D1DF0239700350569 /* AVFoundation.framework */; };
+		03D905701DF0239F00350569 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D9056F1DF0239F00350569 /* CoreGraphics.framework */; };
+		03D905721DF023AA00350569 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D905711DF023AA00350569 /* CoreMedia.framework */; };
+		03D905741DF023B300350569 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D905731DF023B300350569 /* CoreVideo.framework */; };
+		03D905761DF023C000350569 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D905751DF023BF00350569 /* MediaPlayer.framework */; };
+		03D905781DF023C800350569 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D905771DF023C800350569 /* MobileCoreServices.framework */; };
+		03D9057A1DF023CF00350569 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D905791DF023CF00350569 /* OpenGLES.framework */; };
+		03D9057C1DF023D700350569 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D9057B1DF023D700350569 /* QuartzCore.framework */; };
+		03D9057E1DF023DE00350569 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D9057D1DF023DE00350569 /* UIKit.framework */; };
+		03D905801DF023EA00350569 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D9057F1DF023EA00350569 /* VideoToolbox.framework */; };
+		03D905851DF0242200350569 /* MLLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905841DF0242200350569 /* MLLoginController.m */; };
+		03D905871DF0253B00350569 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D905861DF0253B00350569 /* libbz2.tbd */; };
+		03D905891DF0254B00350569 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D905881DF0254B00350569 /* libz.tbd */; };
+		03F515781DF061440087E3CE /* login_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 03D905681DF021EB00350569 /* login_video.mp4 */; };
+		03F515791DF061440087E3CE /* loginmovie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 03D905691DF021EB00350569 /* loginmovie.mp4 */; };
+		7EBAEA2A0FC9F633F4BC71A0 /* libPods-MiaoLive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A843F27631D36E42481B57A /* libPods-MiaoLive.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03D904041DEFE27700350569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03D903E21DEFE27600350569 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03D903E91DEFE27600350569;
+			remoteInfo = MiaoLive;
+		};
+		03D9040F1DEFE27700350569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03D903E21DEFE27600350569 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03D903E91DEFE27600350569;
+			remoteInfo = MiaoLive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03C2E6621DF11EB900BF136F /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		03D903EA1DEFE27600350569 /* MiaoLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiaoLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03D903EE1DEFE27700350569 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		03D903F01DEFE27700350569 /* MLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLAppDelegate.h; path = ../../../MLAppDelegate.h; sourceTree = "<group>"; };
+		03D903F11DEFE27700350569 /* MLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MLAppDelegate.m; path = ../../../MLAppDelegate.m; sourceTree = "<group>"; };
+		03D903F91DEFE27700350569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03D903FC1DEFE27700350569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		03D903FE1DEFE27700350569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03D904031DEFE27700350569 /* MiaoLiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiaoLiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03D904071DEFE27700350569 /* MiaoLiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiaoLiveTests.m; sourceTree = "<group>"; };
+		03D904091DEFE27700350569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03D9040E1DEFE27700350569 /* MiaoLiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiaoLiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03D904121DEFE27700350569 /* MiaoLiveUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiaoLiveUITests.m; sourceTree = "<group>"; };
+		03D904141DEFE27700350569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03D904F61DEFF84300350569 /* MiaoLive.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiaoLive.pch; sourceTree = "<group>"; };
+		03D905141DEFFAEA00350569 /* MLTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabbarController.h; sourceTree = "<group>"; };
+		03D905151DEFFAEA00350569 /* MLTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabbarController.m; sourceTree = "<group>"; };
+		03D905221DF001C400350569 /* MLAppConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAppConst.h; sourceTree = "<group>"; };
+		03D905231DF001C400350569 /* MLAppConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAppConst.m; sourceTree = "<group>"; };
+		03D905251DF003A300350569 /* MLAppDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLAppDefine.h; sourceTree = "<group>"; };
+		03D905261DF00C6D00350569 /* MLAppSkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAppSkin.h; sourceTree = "<group>"; };
+		03D905271DF00C6D00350569 /* MLAppSkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAppSkin.m; sourceTree = "<group>"; };
+		03D905291DF00F9500350569 /* MLHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHomeController.h; sourceTree = "<group>"; };
+		03D9052A1DF00F9500350569 /* MLHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHomeController.m; sourceTree = "<group>"; };
+		03D9052C1DF00FAB00350569 /* MLLiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLiveController.h; sourceTree = "<group>"; };
+		03D9052D1DF00FAB00350569 /* MLLiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLiveController.m; sourceTree = "<group>"; };
+		03D905331DF00FE200350569 /* MLMineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMineController.h; sourceTree = "<group>"; };
+		03D905341DF00FE200350569 /* MLMineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMineController.m; sourceTree = "<group>"; };
+		03D905361DF011B300350569 /* MLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNavigationController.h; sourceTree = "<group>"; };
+		03D905371DF011B300350569 /* MLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNavigationController.m; sourceTree = "<group>"; };
+		03D905621DF01E3F00350569 /* MLHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHttpTool.h; sourceTree = "<group>"; };
+		03D905631DF01E3F00350569 /* MLHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHttpTool.m; sourceTree = "<group>"; };
+		03D905681DF021EB00350569 /* login_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = login_video.mp4; path = ../Controller/login_video.mp4; sourceTree = "<group>"; };
+		03D905691DF021EB00350569 /* loginmovie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = loginmovie.mp4; path = ../Controller/loginmovie.mp4; sourceTree = "<group>"; };
+		03D9056B1DF0238500350569 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		03D9056D1DF0239700350569 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		03D9056F1DF0239F00350569 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		03D905711DF023AA00350569 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		03D905731DF023B300350569 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		03D905751DF023BF00350569 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		03D905771DF023C800350569 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		03D905791DF023CF00350569 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		03D9057B1DF023D700350569 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		03D9057D1DF023DE00350569 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		03D9057F1DF023EA00350569 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		03D905831DF0242200350569 /* MLLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLoginController.h; sourceTree = "<group>"; };
+		03D905841DF0242200350569 /* MLLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLoginController.m; sourceTree = "<group>"; };
+		03D905861DF0253B00350569 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		03D905881DF0254B00350569 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		710A6E2A392EBDEB9B37262D /* Pods-MiaoLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiaoLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiaoLive/Pods-MiaoLive.debug.xcconfig"; sourceTree = "<group>"; };
+		8A843F27631D36E42481B57A /* libPods-MiaoLive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MiaoLive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9192477895C6212928E5E0C5 /* Pods-MiaoLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiaoLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiaoLive/Pods-MiaoLive.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03D903E71DEFE27600350569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03D905891DF0254B00350569 /* libz.tbd in Frameworks */,
+				03D905871DF0253B00350569 /* libbz2.tbd in Frameworks */,
+				03D905801DF023EA00350569 /* VideoToolbox.framework in Frameworks */,
+				03C2E6631DF11EB900BF136F /* IJKMediaFramework.framework in Frameworks */,
+				03D9057E1DF023DE00350569 /* UIKit.framework in Frameworks */,
+				03D9057C1DF023D700350569 /* QuartzCore.framework in Frameworks */,
+				03D9057A1DF023CF00350569 /* OpenGLES.framework in Frameworks */,
+				03D905781DF023C800350569 /* MobileCoreServices.framework in Frameworks */,
+				03D905761DF023C000350569 /* MediaPlayer.framework in Frameworks */,
+				03D905741DF023B300350569 /* CoreVideo.framework in Frameworks */,
+				03D905721DF023AA00350569 /* CoreMedia.framework in Frameworks */,
+				03D905701DF0239F00350569 /* CoreGraphics.framework in Frameworks */,
+				03D9056E1DF0239700350569 /* AVFoundation.framework in Frameworks */,
+				03D9056C1DF0238500350569 /* AudioToolbox.framework in Frameworks */,
+				7EBAEA2A0FC9F633F4BC71A0 /* libPods-MiaoLive.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03D904001DEFE27700350569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03D9040B1DEFE27700350569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03D903E11DEFE27600350569 = {
+			isa = PBXGroup;
+			children = (
+				03D903EC1DEFE27600350569 /* MiaoLive */,
+				03D904061DEFE27700350569 /* MiaoLiveTests */,
+				03D904111DEFE27700350569 /* MiaoLiveUITests */,
+				03D903EB1DEFE27600350569 /* Products */,
+				03D9056A1DF0238500350569 /* Frameworks */,
+				6F50B4EB431BF9791A189E0F /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		03D903EB1DEFE27600350569 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03D903EA1DEFE27600350569 /* MiaoLive.app */,
+				03D904031DEFE27700350569 /* MiaoLiveTests.xctest */,
+				03D9040E1DEFE27700350569 /* MiaoLiveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03D903EC1DEFE27600350569 /* MiaoLive */ = {
+			isa = PBXGroup;
+			children = (
+				03D904201DEFF65800350569 /* Classes */,
+				03D903ED1DEFE27700350569 /* Supporting Files */,
+			);
+			path = MiaoLive;
+			sourceTree = "<group>";
+		};
+		03D903ED1DEFE27700350569 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				03D903F91DEFE27700350569 /* Assets.xcassets */,
+				03D903FB1DEFE27700350569 /* LaunchScreen.storyboard */,
+				03D903FE1DEFE27700350569 /* Info.plist */,
+				03D903EE1DEFE27700350569 /* main.m */,
+				03D904F61DEFF84300350569 /* MiaoLive.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03D904061DEFE27700350569 /* MiaoLiveTests */ = {
+			isa = PBXGroup;
+			children = (
+				03D904071DEFE27700350569 /* MiaoLiveTests.m */,
+				03D904091DEFE27700350569 /* Info.plist */,
+			);
+			path = MiaoLiveTests;
+			sourceTree = "<group>";
+		};
+		03D904111DEFE27700350569 /* MiaoLiveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				03D904121DEFE27700350569 /* MiaoLiveUITests.m */,
+				03D904141DEFE27700350569 /* Info.plist */,
+			);
+			path = MiaoLiveUITests;
+			sourceTree = "<group>";
+		};
+		03D904201DEFF65800350569 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				03D905651DF0217A00350569 /* Login */,
+				03D9052F1DF00FC800350569 /* Mine */,
+				03D904211DEFF65800350569 /* Home */,
+				03D904251DEFF65800350569 /* Live */,
+				03D904291DEFF65800350569 /* Main */,
+				03D9042D1DEFF65800350569 /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		03D904211DEFF65800350569 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				03D904221DEFF65800350569 /* Controller */,
+				03D904231DEFF65800350569 /* Model */,
+				03D904241DEFF65800350569 /* View */,
+				03D905291DF00F9500350569 /* MLHomeController.h */,
+				03D9052A1DF00F9500350569 /* MLHomeController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		03D904221DEFF65800350569 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03D904231DEFF65800350569 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03D904241DEFF65800350569 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03D904251DEFF65800350569 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				03D904261DEFF65800350569 /* Controller */,
+				03D904271DEFF65800350569 /* Model */,
+				03D904281DEFF65800350569 /* View */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		03D904261DEFF65800350569 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03D9052C1DF00FAB00350569 /* MLLiveController.h */,
+				03D9052D1DF00FAB00350569 /* MLLiveController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03D904271DEFF65800350569 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03D904281DEFF65800350569 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03D904291DEFF65800350569 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				03D904341DEFF68400350569 /* Delegate */,
+				03D9042A1DEFF65800350569 /* Controller */,
+				03D9042B1DEFF65800350569 /* Model */,
+				03D9042C1DEFF65800350569 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		03D9042A1DEFF65800350569 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03D905141DEFFAEA00350569 /* MLTabbarController.h */,
+				03D905151DEFFAEA00350569 /* MLTabbarController.m */,
+				03D905361DF011B300350569 /* MLNavigationController.h */,
+				03D905371DF011B300350569 /* MLNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03D9042B1DEFF65800350569 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03D9042C1DEFF65800350569 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03D9042D1DEFF65800350569 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				03D905171DF000B600350569 /* Source */,
+				03D905181DF000B600350569 /* Tool */,
+				03D9042E1DEFF65800350569 /* Category */,
+				03D9042F1DEFF65800350569 /* Lib */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		03D9042E1DEFF65800350569 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		03D9042F1DEFF65800350569 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		03D904341DEFF68400350569 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				03D903F01DEFE27700350569 /* MLAppDelegate.h */,
+				03D903F11DEFE27700350569 /* MLAppDelegate.m */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		03D905171DF000B600350569 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				03D905221DF001C400350569 /* MLAppConst.h */,
+				03D905231DF001C400350569 /* MLAppConst.m */,
+				03D905251DF003A300350569 /* MLAppDefine.h */,
+				03D905261DF00C6D00350569 /* MLAppSkin.h */,
+				03D905271DF00C6D00350569 /* MLAppSkin.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		03D905181DF000B600350569 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				03D905611DF01E3400350569 /* Http */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		03D9052F1DF00FC800350569 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				03D905301DF00FC800350569 /* Controller */,
+				03D905311DF00FC800350569 /* Model */,
+				03D905321DF00FC800350569 /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		03D905301DF00FC800350569 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03D905331DF00FE200350569 /* MLMineController.h */,
+				03D905341DF00FE200350569 /* MLMineController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03D905311DF00FC800350569 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03D905321DF00FC800350569 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03D905611DF01E3400350569 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				03D905621DF01E3F00350569 /* MLHttpTool.h */,
+				03D905631DF01E3F00350569 /* MLHttpTool.m */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		03D905651DF0217A00350569 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				03D905671DF021DD00350569 /* Resource */,
+				03D905661DF0217A00350569 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		03D905661DF0217A00350569 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03D905831DF0242200350569 /* MLLoginController.h */,
+				03D905841DF0242200350569 /* MLLoginController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03D905671DF021DD00350569 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				03D905681DF021EB00350569 /* login_video.mp4 */,
+				03D905691DF021EB00350569 /* loginmovie.mp4 */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		03D9056A1DF0238500350569 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03D905881DF0254B00350569 /* libz.tbd */,
+				03D905861DF0253B00350569 /* libbz2.tbd */,
+				03C2E6621DF11EB900BF136F /* IJKMediaFramework.framework */,
+				03D9057F1DF023EA00350569 /* VideoToolbox.framework */,
+				03D9057D1DF023DE00350569 /* UIKit.framework */,
+				03D9057B1DF023D700350569 /* QuartzCore.framework */,
+				03D905791DF023CF00350569 /* OpenGLES.framework */,
+				03D905771DF023C800350569 /* MobileCoreServices.framework */,
+				03D905751DF023BF00350569 /* MediaPlayer.framework */,
+				03D905731DF023B300350569 /* CoreVideo.framework */,
+				03D905711DF023AA00350569 /* CoreMedia.framework */,
+				03D9056F1DF0239F00350569 /* CoreGraphics.framework */,
+				03D9056D1DF0239700350569 /* AVFoundation.framework */,
+				03D9056B1DF0238500350569 /* AudioToolbox.framework */,
+				8A843F27631D36E42481B57A /* libPods-MiaoLive.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F50B4EB431BF9791A189E0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				710A6E2A392EBDEB9B37262D /* Pods-MiaoLive.debug.xcconfig */,
+				9192477895C6212928E5E0C5 /* Pods-MiaoLive.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03D903E91DEFE27600350569 /* MiaoLive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03D904171DEFE27700350569 /* Build configuration list for PBXNativeTarget "MiaoLive" */;
+			buildPhases = (
+				9376E409F78E873E4FCF3514 /* [CP] Check Pods Manifest.lock */,
+				03D903E61DEFE27600350569 /* Sources */,
+				03D903E71DEFE27600350569 /* Frameworks */,
+				03D903E81DEFE27600350569 /* Resources */,
+				B24B40FF9B9475C352D250CF /* [CP] Embed Pods Frameworks */,
+				6B5FA6C58D05123813551FF2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MiaoLive;
+			productName = MiaoLive;
+			productReference = 03D903EA1DEFE27600350569 /* MiaoLive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		03D904021DEFE27700350569 /* MiaoLiveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03D9041A1DEFE27700350569 /* Build configuration list for PBXNativeTarget "MiaoLiveTests" */;
+			buildPhases = (
+				03D903FF1DEFE27700350569 /* Sources */,
+				03D904001DEFE27700350569 /* Frameworks */,
+				03D904011DEFE27700350569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03D904051DEFE27700350569 /* PBXTargetDependency */,
+			);
+			name = MiaoLiveTests;
+			productName = MiaoLiveTests;
+			productReference = 03D904031DEFE27700350569 /* MiaoLiveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		03D9040D1DEFE27700350569 /* MiaoLiveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03D9041D1DEFE27700350569 /* Build configuration list for PBXNativeTarget "MiaoLiveUITests" */;
+			buildPhases = (
+				03D9040A1DEFE27700350569 /* Sources */,
+				03D9040B1DEFE27700350569 /* Frameworks */,
+				03D9040C1DEFE27700350569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03D904101DEFE27700350569 /* PBXTargetDependency */,
+			);
+			name = MiaoLiveUITests;
+			productName = MiaoLiveUITests;
+			productReference = 03D9040E1DEFE27700350569 /* MiaoLiveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03D903E21DEFE27600350569 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ML;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "王鑫";
+				TargetAttributes = {
+					03D903E91DEFE27600350569 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = Y9P69M8RTC;
+						ProvisioningStyle = Automatic;
+					};
+					03D904021DEFE27700350569 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = Y9P69M8RTC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 03D903E91DEFE27600350569;
+					};
+					03D9040D1DEFE27700350569 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = Y9P69M8RTC;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 03D903E91DEFE27600350569;
+					};
+				};
+			};
+			buildConfigurationList = 03D903E51DEFE27600350569 /* Build configuration list for PBXProject "MiaoLive" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03D903E11DEFE27600350569;
+			productRefGroup = 03D903EB1DEFE27600350569 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03D903E91DEFE27600350569 /* MiaoLive */,
+				03D904021DEFE27700350569 /* MiaoLiveTests */,
+				03D9040D1DEFE27700350569 /* MiaoLiveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03D903E81DEFE27600350569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03F515781DF061440087E3CE /* login_video.mp4 in Resources */,
+				03F515791DF061440087E3CE /* loginmovie.mp4 in Resources */,
+				03D903FD1DEFE27700350569 /* LaunchScreen.storyboard in Resources */,
+				03D903FA1DEFE27700350569 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03D904011DEFE27700350569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03D9040C1DEFE27700350569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B5FA6C58D05123813551FF2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiaoLive/Pods-MiaoLive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9376E409F78E873E4FCF3514 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B24B40FF9B9475C352D250CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiaoLive/Pods-MiaoLive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03D903E61DEFE27600350569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03D905851DF0242200350569 /* MLLoginController.m in Sources */,
+				03D905241DF001C400350569 /* MLAppConst.m in Sources */,
+				03D905161DEFFAEA00350569 /* MLTabbarController.m in Sources */,
+				03D905641DF01E3F00350569 /* MLHttpTool.m in Sources */,
+				03D903F21DEFE27700350569 /* MLAppDelegate.m in Sources */,
+				03D9052E1DF00FAB00350569 /* MLLiveController.m in Sources */,
+				03D905351DF00FE200350569 /* MLMineController.m in Sources */,
+				03D905281DF00C6D00350569 /* MLAppSkin.m in Sources */,
+				03D9052B1DF00F9500350569 /* MLHomeController.m in Sources */,
+				03D903EF1DEFE27700350569 /* main.m in Sources */,
+				03D905381DF011B300350569 /* MLNavigationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03D903FF1DEFE27700350569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03D904081DEFE27700350569 /* MiaoLiveTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03D9040A1DEFE27700350569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03D904131DEFE27700350569 /* MiaoLiveUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03D904051DEFE27700350569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03D903E91DEFE27600350569 /* MiaoLive */;
+			targetProxy = 03D904041DEFE27700350569 /* PBXContainerItemProxy */;
+		};
+		03D904101DEFE27700350569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03D903E91DEFE27600350569 /* MiaoLive */;
+			targetProxy = 03D9040F1DEFE27700350569 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		03D903FB1DEFE27700350569 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03D903FC1DEFE27700350569 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		03D904151DEFE27700350569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		03D904161DEFE27700350569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03D904181DEFE27700350569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 710A6E2A392EBDEB9B37262D /* Pods-MiaoLive.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y9P69M8RTC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/MiaoLive.pch";
+				INFOPLIST_FILE = MiaoLive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wangqiujia.MiaoLive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		03D904191DEFE27700350569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9192477895C6212928E5E0C5 /* Pods-MiaoLive.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y9P69M8RTC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/MiaoLive.pch";
+				INFOPLIST_FILE = MiaoLive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wangqiujia.MiaoLive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		03D9041B1DEFE27700350569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y9P69M8RTC;
+				INFOPLIST_FILE = MiaoLiveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wangqiujia.MiaoLiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiaoLive.app/MiaoLive";
+			};
+			name = Debug;
+		};
+		03D9041C1DEFE27700350569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y9P69M8RTC;
+				INFOPLIST_FILE = MiaoLiveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wangqiujia.MiaoLiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiaoLive.app/MiaoLive";
+			};
+			name = Release;
+		};
+		03D9041E1DEFE27700350569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = Y9P69M8RTC;
+				INFOPLIST_FILE = MiaoLiveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wangqiujia.MiaoLiveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MiaoLive;
+			};
+			name = Debug;
+		};
+		03D9041F1DEFE27700350569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = Y9P69M8RTC;
+				INFOPLIST_FILE = MiaoLiveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wangqiujia.MiaoLiveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MiaoLive;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03D903E51DEFE27600350569 /* Build configuration list for PBXProject "MiaoLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03D904151DEFE27700350569 /* Debug */,
+				03D904161DEFE27700350569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03D904171DEFE27700350569 /* Build configuration list for PBXNativeTarget "MiaoLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03D904181DEFE27700350569 /* Debug */,
+				03D904191DEFE27700350569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03D9041A1DEFE27700350569 /* Build configuration list for PBXNativeTarget "MiaoLiveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03D9041B1DEFE27700350569 /* Debug */,
+				03D9041C1DEFE27700350569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03D9041D1DEFE27700350569 /* Build configuration list for PBXNativeTarget "MiaoLiveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03D9041E1DEFE27700350569 /* Debug */,
+				03D9041F1DEFE27700350569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03D903E21DEFE27600350569 /* Project object */;
+}
