@@ -12,7 +12,6 @@
 #import "MLLiveRoomLayout.h"
 #import "MLLiveModel.h"
 @interface MLLiveRoomController ()
-
 @end
 
 @implementation MLLiveRoomController
@@ -76,6 +75,7 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
                                                                       indexPath:indexPath];
     
     cell.liveM = self.lives[self.currentIndex];
+    cell.currentVC = self;
     return cell;
 }
 

@@ -16,4 +16,7 @@
 /** 相关的liveModel*/
 @property(nonatomic,strong)MLLiveModel *relationLiveM;
 
+///当前的控制器
+@property(nonatomic,weak)UIViewController *currentVC;
+
 @end

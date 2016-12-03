@@ -10,6 +10,9 @@
 #import <IJKMediaFramework/IJKMediaFramework.h>
 #import "BarrageHeader.h"
 #import "NSSafeObject.h"
+#import "MLLiveCellBottomBar.h"
+#import "MLAnchorView.h"
+
 
 static NSString * const reuseIdentifier = @"MLLivePlayerCell";
 
@@ -21,17 +24,35 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
     NSTimer *_timer;
 }
 /** 直播的控制器*/
-@property(nonatomic,strong)IJKFFMoviePlayerController *player;
+@property(nonatomic,strong)IJKFFMoviePlayerController *moviePlayer;
 /**数组*/
 @property(nonatomic,strong)NSArray *renderArr;
 /** 是否开启弹幕*/
 @property(nonatomic,strong)UISwitch *loggle;
+///底部工具栏
+@property(strong,nonatomic)MLLiveCellBottomBar *bottomBar;
+///主播的view(cell左上角)
+@property(strong,nonatomic)MLAnchorView *anchorView;
 @end
 @implementation MLLivePlayerCell
+- (MLAnchorView *)anchorView{
+    if (!_anchorView) {
+        _anchorView = [MLAnchorView liveAnchorView];
+        _anchorView.frame= CGRectMake(10, 44, MLScreenWidth - 2*20, 120);
+    }
+    return _anchorView;
+}
+- (MLLiveCellBottomBar *)bottomBar{
+    if (!_bottomBar) {
+        _bottomBar = [[MLLiveCellBottomBar alloc] init];
+        _bottomBar.frame = CGRectMake(0, MLScreenHeight - 50, MLScreenWidth, 50);
+    }
+    return _bottomBar;
+}
 - (UISwitch *)loggle{
     if (!_loggle) {
         CGFloat sX = 50;
-        CGFloat sY = 70+30;
+        CGFloat sY = MLScreenHeight *0.6;
         CGFloat sW = 100;
         CGFloat sH = 40;
         CGRect frame = CGRectMake(sX, sY, sW, sH);
@@ -71,17 +92,44 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
 //[self.contentView addSubView:tempView] 这个方法，最好在懒架子中使用，这样有利于省内存
 - (void)createSubViews{
    //1.当前主播简介
+    [self.contentView addSubview:self.anchorView];
     
    //2.当前观看人
     
    //3.底部操作栏目
-    
+    [self.contentView addSubview:self.bottomBar];
+    __weak typeof(self)weakself = self;
+    [self.bottomBar setClickToolBlock:^(MLLiveCellBottomBarType type) {
+        switch (type) {
+            case MLLiveCellBottomBarTypeGift:
+                MLLog(@"gift");
+                break;
+            case MLLiveCellBottomBarTypePublicTalk:
+                MLLog(@"MLLiveCellBottomBarTypePublicTalk");
+                break;
+            case MLLiveCellBottomBarTypePrivateTalk:
+                MLLog(@"MLLiveCellBottomBarTypePrivateTalk");
+                break;
+            case MLLiveCellBottomBarTypeRank:
+                MLLog(@"MLLiveCellBottomBarTypeRank");
+                break;
+            case MLLiveCellBottomBarTypeShare:
+                MLLog(@"MLLiveCellBottomBarTypeShare");
+                break;
+            case MLLiveCellBottomBarTypeClose:
+                [weakself.currentVC dismissViewControllerAnimated:YES completion:nil];
+                break;
+                
+            default:
+                break;
+        }
+    }];
    //4.相关人的直播圆形view视图
     
    //5.小星星气泡view
    
    //6.结束的时候样式view
-
+   
    //7.loading的状态view
     
    //8.弹幕
@@ -142,6 +190,90 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
                                             selector:@selector(excute)
                                             userInfo:nil
                                              repeats:YES];
+    
+}
+
+///更新UI
+- (void)setLiveM:(MLLiveModel *)liveM{
+    _liveM = liveM;
+    
+    //9.当前的播放器
+    IJKFFOptions *options = [IJKFFOptions optionsByDefault];
+    [options setPlayerOptionIntValue:1 forKey:@"videotoolbox"];
+    // 帧速率(fps) （可以改，确认非标准桢率会导致音画不同步，所以只能设定为15或者29.97）
+    [options setPlayerOptionIntValue:29.97 forKey:@"r"];
+    // -vol——设置音量大小，256为标准音量。（要设置成两倍音量时则输入512，依此类推
+    [options setPlayerOptionIntValue:512 forKey:@"vol"];
+    
+    self.moviePlayer = [[IJKFFMoviePlayerController alloc] initWithContentURLString:liveM.flv withOptions:options];
+    
+    //设置茨村
+    self.moviePlayer.view.frame = MLScreenBounce;
+    //设置填充模式
+    self.moviePlayer.scalingMode = IJKMPMovieScalingModeAspectFill;
+    //设置自动播放模式，一定要选择no，这样才能控制好直播
+    self.moviePlayer.shouldAutoplay = NO;
+    // 默认不显示s
+    self.moviePlayer.shouldShowHudView = NO;
+    [self.contentView insertSubview:self.moviePlayer.view atIndex:0];
+    [self.moviePlayer prepareToPlay];
+    
+    
+    // 设置监听
+    [self initObserver];
+    //赋值
+    self.anchorView.live = liveM;
+}
+
+
+- (void)initObserver{
+    // 监听视频是否播放完成
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didFinish)
+                                                 name:IJKMPMoviePlayerPlaybackDidFinishNotification
+                                               object:self.moviePlayer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(stateDidChange)
+                                                 name:IJKMPMoviePlayerLoadStateDidChangeNotification
+                                               object:self.moviePlayer];
+}
+- (void)dealloc{
+    [MLNoticeficationCenter removeObserver:self];
+    [self.moviePlayer stop];
+    self.moviePlayer = nil;
+}
+
+- (void)didFinish{
+
+}
+
+- (void)stateDidChange{
+    
+    [self.moviePlayer play];
+//    if ((self.moviePlayer.loadState & IJKMPMovieLoadStatePlaythroughOK) != 0) {
+//        if (!self.moviePlayer.isPlaying) {
+//            [self.moviePlayer play];
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                if (_placeHolderView) {
+//                    [_placeHolderView removeFromSuperview];
+//                    _placeHolderView = nil;
+//                    [self.moviePlayer.view addSubview:_renderer.view];
+//                }
+//                [self.parentVc hideGufLoding];
+//            });
+//        }else{
+//            // 如果是网络状态不好, 断开后恢复, 也需要去掉加载
+//            if (self.parentVc.gifView.isAnimating) {
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                    [self.parentVc hideGufLoding];
+//                });
+//                
+//            }
+//        }
+//    }else if (self.moviePlayer.loadState & IJKMPMovieLoadStateStalled){ // 网速不佳, 自动暂停状态
+//        [self.parentVc showGifLoding:nil inView:self.moviePlayer.view];
+//    }
     
 }
 

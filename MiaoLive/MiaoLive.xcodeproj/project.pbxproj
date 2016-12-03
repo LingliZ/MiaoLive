@@ -44,6 +44,10 @@
 		031D8E7C1DF292D00069C4DA /* NSSafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D8E7B1DF292D00069C4DA /* NSSafeObject.m */; };
 		031D8E7E1DF296300069C4DA /* danmu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 031D8E7D1DF296300069C4DA /* danmu.plist */; };
 		031D8E811DF2980E0069C4DA /* MLLiveRoomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D8E801DF2980E0069C4DA /* MLLiveRoomLayout.m */; };
+		031D8E841DF2A0DC0069C4DA /* MLLiveCellBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D8E831DF2A0DC0069C4DA /* MLLiveCellBottomBar.m */; };
+		031D8E871DF2A9C30069C4DA /* MLAnchorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D8E861DF2A9C30069C4DA /* MLAnchorView.m */; };
+		031D8E8A1DF2AE2A0069C4DA /* MLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 031D8E891DF2AE2A0069C4DA /* MLUser.m */; };
+		031D8E8C1DF2AFCA0069C4DA /* MLAnchorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031D8E8B1DF2AFCA0069C4DA /* MLAnchorView.xib */; };
 		033C211D1DF1A87200F57A26 /* UIView+ViewFrameExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 033C211C1DF1A87200F57A26 /* UIView+ViewFrameExt.m */; };
 		03C2E6631DF11EB900BF136F /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C2E6621DF11EB900BF136F /* IJKMediaFramework.framework */; };
 		03D903EF1DEFE27700350569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D903EE1DEFE27700350569 /* main.m */; };
@@ -166,6 +170,13 @@
 		031D8E7D1DF296300069C4DA /* danmu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = danmu.plist; sourceTree = "<group>"; };
 		031D8E7F1DF2980E0069C4DA /* MLLiveRoomLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLiveRoomLayout.h; sourceTree = "<group>"; };
 		031D8E801DF2980E0069C4DA /* MLLiveRoomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLiveRoomLayout.m; sourceTree = "<group>"; };
+		031D8E821DF2A0DC0069C4DA /* MLLiveCellBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLiveCellBottomBar.h; sourceTree = "<group>"; };
+		031D8E831DF2A0DC0069C4DA /* MLLiveCellBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLiveCellBottomBar.m; sourceTree = "<group>"; };
+		031D8E851DF2A9C30069C4DA /* MLAnchorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAnchorView.h; sourceTree = "<group>"; };
+		031D8E861DF2A9C30069C4DA /* MLAnchorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAnchorView.m; sourceTree = "<group>"; };
+		031D8E881DF2AE2A0069C4DA /* MLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLUser.h; path = MiaoLive/Classes/Home/View/MLUser.h; sourceTree = SOURCE_ROOT; };
+		031D8E891DF2AE2A0069C4DA /* MLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLUser.m; path = MiaoLive/Classes/Home/View/MLUser.m; sourceTree = SOURCE_ROOT; };
+		031D8E8B1DF2AFCA0069C4DA /* MLAnchorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLAnchorView.xib; sourceTree = "<group>"; };
 		033C211B1DF1A87200F57A26 /* UIView+ViewFrameExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewFrameExt.h"; sourceTree = "<group>"; };
 		033C211C1DF1A87200F57A26 /* UIView+ViewFrameExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewFrameExt.m"; sourceTree = "<group>"; };
 		03C2E6621DF11EB900BF136F /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
@@ -301,6 +312,11 @@
 				031D8E2C1DF2669F0069C4DA /* MLHotCell.xib */,
 				031D8E3C1DF2890F0069C4DA /* MLLivePlayerCell.h */,
 				031D8E3D1DF2890F0069C4DA /* MLLivePlayerCell.m */,
+				031D8E821DF2A0DC0069C4DA /* MLLiveCellBottomBar.h */,
+				031D8E831DF2A0DC0069C4DA /* MLLiveCellBottomBar.m */,
+				031D8E851DF2A9C30069C4DA /* MLAnchorView.h */,
+				031D8E861DF2A9C30069C4DA /* MLAnchorView.m */,
+				031D8E8B1DF2AFCA0069C4DA /* MLAnchorView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -628,6 +644,8 @@
 		03D905311DF00FC800350569 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				031D8E881DF2AE2A0069C4DA /* MLUser.h */,
+				031D8E891DF2AE2A0069C4DA /* MLUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -823,6 +841,7 @@
 				03F515791DF061440087E3CE /* loginmovie.mp4 in Resources */,
 				031D8E7E1DF296300069C4DA /* danmu.plist in Resources */,
 				031D8E2E1DF2669F0069C4DA /* MLHotCell.xib in Resources */,
+				031D8E8C1DF2AFCA0069C4DA /* MLAnchorView.xib in Resources */,
 				031D8E751DF2905F0069C4DA /* LICENSE in Resources */,
 				03D903FD1DEFE27700350569 /* LaunchScreen.storyboard in Resources */,
 				031D8E191DF25C0C0069C4DA /* MLWebViewController.xib in Resources */,
@@ -920,7 +939,9 @@
 				03D905351DF00FE200350569 /* MLMineController.m in Sources */,
 				031D8E101DF25B990069C4DA /* MLHotController.m in Sources */,
 				031D8E111DF25B990069C4DA /* MLNewLivesController.m in Sources */,
+				031D8E8A1DF2AE2A0069C4DA /* MLUser.m in Sources */,
 				031D8E3E1DF2890F0069C4DA /* MLLivePlayerCell.m in Sources */,
+				031D8E871DF2A9C30069C4DA /* MLAnchorView.m in Sources */,
 				031D8E681DF2905F0069C4DA /* BarrageDescriptor.m in Sources */,
 				031D8E6F1DF2905F0069C4DA /* BarrageFloatTextSprite.m in Sources */,
 				031D8E661DF2905F0069C4DA /* BarrageCanvas.m in Sources */,
@@ -934,6 +955,7 @@
 				031D8E3B1DF272890069C4DA /* MLLiveRoomController.m in Sources */,
 				031D8E6E1DF2905F0069C4DA /* BarrageFloatSprite.m in Sources */,
 				031D8E741DF2905F0069C4DA /* BarrageWalkTextSprite.m in Sources */,
+				031D8E841DF2A0DC0069C4DA /* MLLiveCellBottomBar.m in Sources */,
 				031D8E6B1DF2905F0069C4DA /* BarrageSpriteFactory.m in Sources */,
 				031D8E0E1DF25B990069C4DA /* MLFocusAnchorController.m in Sources */,
 				033C211D1DF1A87200F57A26 /* UIView+ViewFrameExt.m in Sources */,
