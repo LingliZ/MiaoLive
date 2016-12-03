@@ -8,4 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const name;
+extern NSString * const kNotifyToseeBigWorld;
+
+
+
+extern CGFloat const kMLHomeControllerSelectViewHeight;
+extern CGFloat const kMLHomeControllerHeaderViewMarging;
+extern CGFloat const kMLHomeControllerHeaderPerViewWidth;

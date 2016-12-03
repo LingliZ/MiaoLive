@@ -15,7 +15,7 @@ static AFHTTPSessionManager *_sessionManager;
 + (void)initialize{
     _sessionManager = [AFHTTPSessionManager manager];
     _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
-    _sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
     _sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/xml", @"text/plain", nil];
     _sessionManager.requestSerializer.timeoutInterval = 5.0;
 }
@@ -23,21 +23,6 @@ static AFHTTPSessionManager *_sessionManager;
 
 + (void)postWithURL:(NSString *)url params:(NSMutableDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
-
-    // 1.创建请求管理对象
-//    [_sessionManager POST:url
-//               parameters:params
-//          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//              if (success) {
-//                  success(responseObject);
-//              }
-//          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//              if (failure) {
-//                  failure(error);
-//              }
-//          }];
     
     [_sessionManager POST:url
                parameters:params

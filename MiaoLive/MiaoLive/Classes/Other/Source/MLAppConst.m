@@ -8,4 +8,10 @@
 
 
 
-NSString  * const name = @"name";
+NSString  * const kNotifyToseeBigWorld = @"kNotifyToseeBigWorld";
+
+
+
+CGFloat const kMLHomeControllerSelectViewHeight = 60.0;
+CGFloat const kMLHomeControllerHeaderViewMarging = 10.0;
+CGFloat const kMLHomeControllerHeaderPerViewWidth = 60;

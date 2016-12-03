@@ -10,16 +10,20 @@
 #import "MLHotController.h"
 #import "MLNewLivesController.h"
 #import "MLFocusAnchorController.h"
+#import "ALinSelectedView.h"
+#import "MLWebViewController.h"
 
 @interface MLHomeController ()<UIScrollViewDelegate>
 /** 热门 */
 @property(weak,nonatomic)  MLHotController *hot;
 /** 直播 */
-@property(weak,nonatomic)  MLNewLivesController *newLive;
+@property(weak,nonatomic)  MLNewLivesController *lastLive;
 /** 我的关注主播 */
 @property(weak,nonatomic)  MLFocusAnchorController *care;
 /** scrollview */
 @property(weak,nonatomic)  UIScrollView *scrollView;
+/** 顶部选择视图 */
+@property(nonatomic, assign) ALinSelectedView *selectedView;
 
 @end
 
@@ -56,7 +60,7 @@
     newLive.view.height = height;
     [self addChildViewController:newLive];
     [view addSubview:newLive.view];
-    self.newLive = newLive;
+    self.lastLive = newLive;
     
     MLFocusAnchorController *care = [[MLFocusAnchorController alloc] init];
     care.view.frame = [UIScreen mainScreen].bounds;
@@ -95,7 +99,8 @@
 
 - (void)rankCrown
 {
-    ALinWebViewController *web = [[ALinWebViewController alloc] initWithUrlStr:@"http://live.9158.com/Rank/WeekRank?Random=10"];
+    MLWebViewController *web = [[MLWebViewController alloc] init];
+    web.url = @"http://live.9158.com/Rank/WeekRank?Random=10";
     web.navigationItem.title = @"排行";
     [_selectedView removeFromSuperview];
     _selectedView = nil;
@@ -107,9 +112,9 @@
     // 设置顶部选择视图
     ALinSelectedView *selectedView = [[ALinSelectedView alloc] initWithFrame:self.navigationController.navigationBar.bounds];
     selectedView.x = 45;
-    selectedView.width = ALinScreenWidth - 45 * 2;
+    selectedView.width = MLScreenWidth - 45 * 2;
     [selectedView setSelectedBlock:^(HomeType type) {
-        [self.scrollView setContentOffset:CGPointMake(type * ALinScreenWidth, 0) animated:YES];
+        [self.scrollView setContentOffset:CGPointMake(type * MLScreenWidth, 0) animated:YES];
     }];
     [self.navigationController.navigationBar addSubview:selectedView];
     _selectedView = selectedView;
@@ -120,8 +125,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGFloat page = scrollView.contentOffset.x / ALinScreenWidth;
-    CGFloat offsetX = scrollView.contentOffset.x / ALinScreenWidth * (self.selectedView.width * 0.5 - Home_Seleted_Item_W * 0.5 - 15);
+    CGFloat page = scrollView.contentOffset.x / MLScreenWidth;
+    CGFloat offsetX = scrollView.contentOffset.x / MLScreenWidth * (self.selectedView.width * 0.5 - kMLHomeControllerSelectViewHeight * 0.5 - 15);
     self.selectedView.underLine.x = 15 + offsetX;
     if (page == 1 ) {
         self.selectedView.underLine.x = offsetX + 10;
