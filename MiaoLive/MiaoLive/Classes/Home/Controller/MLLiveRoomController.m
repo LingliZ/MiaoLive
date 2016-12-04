@@ -40,7 +40,6 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
     __weak typeof(self) weakself = self;
     MLRefreshGitHeader *header= [MLRefreshGitHeader headerWithRefreshingBlock:^{
          //获取最合适的index
-//        MLLiveModel *live = [weakself.lives objectAtIndex:weakself.currentIndex];
         [weakself.collectionView.mj_header endRefreshing];
         //刷新currentIndex
         if (self.currentIndex == weakself.lives.count) {
@@ -48,6 +47,7 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
         }else{
             weakself.currentIndex++;
         }
+        
         //刷新collectionView
         [weakself.collectionView reloadData];
     }];

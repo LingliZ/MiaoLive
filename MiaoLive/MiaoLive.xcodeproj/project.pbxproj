@@ -50,6 +50,7 @@
 		035A1C591DF4133D009E56AC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 035A1C481DF4133D009E56AC /* LICENSE */; };
 		035A1C5A1DF4133D009E56AC /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 035A1C491DF4133D009E56AC /* README.md */; };
 		035A1C5D1DF41BDA009E56AC /* UIImageView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 035A1C5C1DF41BDA009E56AC /* UIImageView+Extension.m */; };
+		035A1C601DF42D9B009E56AC /* MLCatEarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 035A1C5F1DF42D9B009E56AC /* MLCatEarView.m */; };
 		03C2E6631DF11EB900BF136F /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C2E6621DF11EB900BF136F /* IJKMediaFramework.framework */; };
 		03D903EF1DEFE27700350569 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D903EE1DEFE27700350569 /* main.m */; };
 		03D903FA1DEFE27700350569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03D903F91DEFE27700350569 /* Assets.xcassets */; };
@@ -182,6 +183,8 @@
 		035A1C491DF4133D009E56AC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		035A1C5B1DF41BDA009E56AC /* UIImageView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Extension.h"; sourceTree = "<group>"; };
 		035A1C5C1DF41BDA009E56AC /* UIImageView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Extension.m"; sourceTree = "<group>"; };
+		035A1C5E1DF42D9B009E56AC /* MLCatEarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCatEarView.h; sourceTree = "<group>"; };
+		035A1C5F1DF42D9B009E56AC /* MLCatEarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCatEarView.m; sourceTree = "<group>"; };
 		03C2E6621DF11EB900BF136F /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		03D903EA1DEFE27600350569 /* MiaoLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiaoLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D903EE1DEFE27700350569 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 				031D8E851DF2A9C30069C4DA /* MLAnchorView.h */,
 				031D8E861DF2A9C30069C4DA /* MLAnchorView.m */,
 				031D8E8B1DF2AFCA0069C4DA /* MLAnchorView.xib */,
+				035A1C5E1DF42D9B009E56AC /* MLCatEarView.h */,
+				035A1C5F1DF42D9B009E56AC /* MLCatEarView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -967,6 +972,7 @@
 				033C211D1DF1A87200F57A26 /* UIView+ViewFrameExt.m in Sources */,
 				03D903EF1DEFE27700350569 /* main.m in Sources */,
 				031D8E7C1DF292D00069C4DA /* NSSafeObject.m in Sources */,
+				035A1C601DF42D9B009E56AC /* MLCatEarView.m in Sources */,
 				03D905381DF011B300350569 /* MLNavigationController.m in Sources */,
 				035A1C5D1DF41BDA009E56AC /* UIImageView+Extension.m in Sources */,
 			);

@@ -13,6 +13,7 @@
 #import "MLLiveCellBottomBar.h"
 #import "UIImage+ALinExtension.h"
 #import "MLAnchorView.h"
+#import "MLCatEarView.h"
 
 
 static NSString * const reuseIdentifier = @"MLLivePlayerCell";
@@ -36,8 +37,20 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
 @property(strong,nonatomic)MLAnchorView *anchorView;
 ///等待时候显示的占位图片
 @property(strong,nonatomic)UIImageView *placeHolderImage;
+///粒子动画
+@property(strong,nonatomic)CAEmitterLayer *emitterLayer;
+///他人主播
+@property(strong,nonatomic)MLCatEarView *catEarView;
 @end
 @implementation MLLivePlayerCell
+
+- (MLCatEarView *)catEarView{
+    if (!_catEarView) {
+        _catEarView = [[MLCatEarView alloc] init];
+        _catEarView.frame = CGRectMake(MLScreenWidth-150, 300, 100, 100);
+    }
+    return _catEarView;
+}
 - (MLAnchorView *)anchorView{
     if (!_anchorView) {
         _anchorView = [MLAnchorView liveAnchorView];
@@ -45,7 +58,48 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
     }
     return _anchorView;
 }
-
+- (CAEmitterLayer *)emitterLayer{
+    if (!_emitterLayer) {
+        CAEmitterLayer *emitterLayer = [CAEmitterLayer layer];
+        CGFloat x = MLScreenWidth - 50;
+        CGFloat y = MLScreenHeight - 50;
+        emitterLayer.emitterPosition = CGPointMake(x, y);
+        emitterLayer.emitterSize = CGSizeMake(20, 20);
+        //发射器的渲染模式
+        emitterLayer.renderMode = kCAEmitterLayerUnordered;
+        //创建粒子
+        NSMutableArray *array = [NSMutableArray array];
+        for (int i = 0; i<10; i++) {
+            // 发射单元
+            CAEmitterCell *stepCell = [CAEmitterCell emitterCell];
+            //1.设置发射的速度，默认一秒
+            stepCell.birthRate = 0.5;
+            //2.粒子存货的时间
+            stepCell.lifetime = arc4random_uniform(4)+1;
+            //3.粒子生存时间容差
+            stepCell.lifetimeRange = 1.5;
+            //4.粒子的内容
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"good%d_30x30", i]];
+            //5.粒子显示的内容
+            stepCell.contents = (id)[image CGImage];
+            //6.粒子的运动速度
+            stepCell.velocity = arc4random_uniform(100)%100;
+            //7.粒子的速度容差
+            stepCell.velocityRange = 80;
+            //8.粒子在xy轴的发射角度
+            stepCell.emissionLongitude = M_PI+M_PI_2;
+            //9.粒子在xy轴的发射角度容差
+            stepCell.emissionRange = M_PI_2/6;
+            //10.缩放比例
+            stepCell.scale = 0.3;
+            //11.添加对象
+            [array addObject:stepCell];
+        }
+        emitterLayer.emitterCells = array;
+        _emitterLayer = emitterLayer;
+    }
+    return _emitterLayer;
+}
 - (UIImageView *)placeHolderImage{
     if (!_placeHolderImage) {
         _placeHolderImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"profile_user_414x414"]];
@@ -140,8 +194,7 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
     }];
    //4.相关人的直播圆形view视图
     
-   //5.小星星气泡view
-   
+
    //6.结束的时候样式view
    
    //7.loading的状态view
@@ -156,7 +209,6 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
     
     //9.默认占位照片
     [self.contentView insertSubview:self.placeHolderImage atIndex:0];
-    self.placeHolderImage.frame = MLScreenBounce;
 }
 
 - (void)autoSendBarrage{
@@ -214,6 +266,32 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
 - (void)setLiveM:(MLLiveModel *)liveM{
     _liveM = liveM;
     
+    //删除过去的直播和弹幕
+    if (self.moviePlayer) {
+        [self.contentView insertSubview:self.placeHolderImage aboveSubview:self.moviePlayer.view];
+        //发送通知
+        [MLNoticeficationCenter postNotificationName:@"delete" object:nil];
+        
+        
+        if (_catEarView) {
+            [_catEarView removeFromSuperview];
+            _catEarView = nil;
+        }
+        if (self.moviePlayer) {
+            [self.moviePlayer shutdown];
+            [self.moviePlayer.view removeFromSuperview];
+            self.moviePlayer = nil;
+        }
+    }
+    
+    
+    if (_emitterLayer) {
+        [_emitterLayer removeFromSuperlayer];
+        _emitterLayer = nil;
+    }
+    
+    
+    self.placeHolderImage.frame = MLScreenBounce;
     //9.当前的播放器
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
     [options setPlayerOptionIntValue:1 forKey:@"videotoolbox"];
@@ -241,7 +319,6 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
     //赋值
     self.anchorView.live = liveM;
     //给默认图片
-//    [self.placeHolderImage sd_setImageWithURL:[NSURL URLWithString:liveM.bigpic]
     [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:liveM.bigpic]
                                                           options:SDWebImageDownloaderUseNSURLCache
                                                          progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
@@ -250,6 +327,14 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
             self.placeHolderImage.image = [UIImage blurImage:image blur:0.8];
         });
     }];
+    
+    //5.小星星气泡view
+    [self.moviePlayer.view.layer addSublayer:self.emitterLayer];
+    self.emitterLayer.hidden = NO;
+    
+    //设置其他同类主播的view
+    [self.moviePlayer.view.layer addSublayer:self.catEarView.layer];
+    self.catEarView.liveM = self.liveM;
 }
 
 
