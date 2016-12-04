@@ -25,5 +25,5 @@
 //分类
 #import "UIView+ViewFrameExt.h"
 #import "UIViewController+MLExtension.h"
-
+#import "UIImageView+Extension.h"
 #endif /* MiaoLive_pch */

@@ -11,6 +11,7 @@
 #import "BarrageHeader.h"
 #import "NSSafeObject.h"
 #import "MLLiveCellBottomBar.h"
+#import "UIImage+ALinExtension.h"
 #import "MLAnchorView.h"
 
 
@@ -33,14 +34,24 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
 @property(strong,nonatomic)MLLiveCellBottomBar *bottomBar;
 ///主播的view(cell左上角)
 @property(strong,nonatomic)MLAnchorView *anchorView;
+///等待时候显示的占位图片
+@property(strong,nonatomic)UIImageView *placeHolderImage;
 @end
 @implementation MLLivePlayerCell
 - (MLAnchorView *)anchorView{
     if (!_anchorView) {
         _anchorView = [MLAnchorView liveAnchorView];
-        _anchorView.frame= CGRectMake(10, 44, MLScreenWidth - 2*20, 120);
+        _anchorView.frame= CGRectMake(10, 24, MLScreenWidth - 2*20, 120);
     }
     return _anchorView;
+}
+
+- (UIImageView *)placeHolderImage{
+    if (!_placeHolderImage) {
+        _placeHolderImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"profile_user_414x414"]];
+        [self.currentVC showGifLoding:nil inView:self.placeHolderImage];
+    }
+    return _placeHolderImage;
 }
 - (MLLiveCellBottomBar *)bottomBar{
     if (!_bottomBar) {
@@ -118,6 +129,9 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
                 break;
             case MLLiveCellBottomBarTypeClose:
                 [weakself.currentVC dismissViewControllerAnimated:YES completion:nil];
+                [MLNoticeficationCenter removeObserver:weakself];
+                [weakself.moviePlayer stop];
+                weakself.moviePlayer = nil;
                 break;
                 
             default:
@@ -135,11 +149,14 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
    //8.弹幕
     _barrageRender = [[BarrageRenderer alloc] init];
     _barrageRender.canvasMargin = UIEdgeInsetsMake(70, 10, 10, 10);
-    [self.contentView addSubview:_barrageRender.view];
+//    [self.contentView addSubview:_barrageRender.view];
     [_barrageRender start];
     [self createTimer];
     self.loggle.on = @(NO);
     
+    //9.默认占位照片
+    [self.contentView insertSubview:self.placeHolderImage atIndex:0];
+    self.placeHolderImage.frame = MLScreenBounce;
 }
 
 - (void)autoSendBarrage{
@@ -223,6 +240,16 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
     [self initObserver];
     //赋值
     self.anchorView.live = liveM;
+    //给默认图片
+//    [self.placeHolderImage sd_setImageWithURL:[NSURL URLWithString:liveM.bigpic]
+    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:liveM.bigpic]
+                                                          options:SDWebImageDownloaderUseNSURLCache
+                                                         progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.currentVC showGifLoding:nil inView:self.placeHolderImage];
+            self.placeHolderImage.image = [UIImage blurImage:image blur:0.8];
+        });
+    }];
 }
 
 
@@ -238,11 +265,6 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
                                                  name:IJKMPMoviePlayerLoadStateDidChangeNotification
                                                object:self.moviePlayer];
 }
-- (void)dealloc{
-    [MLNoticeficationCenter removeObserver:self];
-    [self.moviePlayer stop];
-    self.moviePlayer = nil;
-}
 
 - (void)didFinish{
 
@@ -250,31 +272,29 @@ static NSString * const reuseIdentifier = @"MLLivePlayerCell";
 
 - (void)stateDidChange{
     
-    [self.moviePlayer play];
-//    if ((self.moviePlayer.loadState & IJKMPMovieLoadStatePlaythroughOK) != 0) {
-//        if (!self.moviePlayer.isPlaying) {
-//            [self.moviePlayer play];
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                if (_placeHolderView) {
-//                    [_placeHolderView removeFromSuperview];
-//                    _placeHolderView = nil;
-//                    [self.moviePlayer.view addSubview:_renderer.view];
-//                }
-//                [self.parentVc hideGufLoding];
-//            });
-//        }else{
-//            // 如果是网络状态不好, 断开后恢复, 也需要去掉加载
-//            if (self.parentVc.gifView.isAnimating) {
-//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                    [self.parentVc hideGufLoding];
-//                });
-//                
-//            }
-//        }
-//    }else if (self.moviePlayer.loadState & IJKMPMovieLoadStateStalled){ // 网速不佳, 自动暂停状态
-//        [self.parentVc showGifLoding:nil inView:self.moviePlayer.view];
-//    }
-    
+    if ((self.moviePlayer.loadState & IJKMPMovieLoadStatePlaythroughOK) != 0) {
+        if (!self.moviePlayer.isPlaying) {
+            [self.moviePlayer play];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                if (self.placeHolderImage) {
+                    [_placeHolderImage removeFromSuperview];
+                    _placeHolderImage = nil;
+                    [self.moviePlayer.view addSubview:_barrageRender.view];
+                }
+                [self.currentVC hideGufLoding];
+            });
+        }else{
+            // 如果是网络状态不好, 断开后恢复, 也需要去掉加载
+            if (self.currentVC.gifView.isAnimating) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.currentVC hideGufLoding];
+                });
+            
+            }
+        }
+    }else if (self.moviePlayer.loadState & IJKMPMovieLoadStateStalled){ // 网速不佳, 自动暂停状态
+        [self.currentVC showGifLoding:nil inView:self.moviePlayer.view];
+    }
 }
 
 @end
