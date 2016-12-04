@@ -7,7 +7,13 @@
 //  封装整个项目的GET\POST请求
 
 #import <Foundation/Foundation.h>
-
+typedef NS_ENUM(NSUInteger, MLHttpToolNetworkStates) {
+    MLHttpToolNetworkStatesNone, // 没有网络
+    MLHttpToolNetworkStates2G, // 2G
+    MLHttpToolNetworkStates3G, // 3G
+    MLHttpToolNetworkStates4G, // 4G
+    MLHttpToolNetworkStatesWIFI // WIFI
+};
 @interface MLHttpTool : NSObject
 
 /**
@@ -48,5 +54,7 @@
 
 + (NSDictionary *)httpRequestWithUrl:(NSString *)url andType:(NSString *)type andRequestBody:(NSString *)requestBody;
 
+
++ (MLHttpToolNetworkStates)getNetworkStates;
 
 @end

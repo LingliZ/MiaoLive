@@ -106,4 +106,41 @@ static AFHTTPSessionManager *_sessionManager;
 //    return dic;
 //}
 
++ (MLHttpToolNetworkStates)getNetworkStates{
+    // 判断网络类型
+    NSArray *subviews = [[[[UIApplication sharedApplication] valueForKeyPath:@"statusBar"] valueForKeyPath:@"foregroundView"] subviews];
+        // 保存网络状态
+        MLHttpToolNetworkStates states = MLHttpToolNetworkStatesNone;
+        for (id child in subviews) {
+            if ([child isKindOfClass:NSClassFromString(@"UIStatusBarDataNetworkItemView")]) {
+                //获取到状态栏码
+                int networkType = [[child valueForKeyPath:@"dataNetworkType"] intValue];
+                switch (networkType) {
+                    case 0:
+                        states = MLHttpToolNetworkStatesNone;
+                        //无网模式
+                        break;
+                    case 1:
+                        states = MLHttpToolNetworkStates2G;
+                        break;
+                    case 2:
+                        states = MLHttpToolNetworkStates3G;
+                        break;
+                    case 3:
+                        states = MLHttpToolNetworkStates4G;
+                        break;
+                    case 5:
+                    {
+                        states = MLHttpToolNetworkStatesWIFI;
+                    }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        //根据状态选择
+        return states;
+    }
+
 @end
