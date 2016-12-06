@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLShowTimeController">
+            <connections>
+                <outlet property="statusLabel" destination="MJv-Yb-Xts" id="Q36-Ra-Dbn"/>
+                <outlet property="view" destination="iN0-l3-epB" id="D6v-xv-YcR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="状态:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJv-Yb-Xts">
+                    <frame key="frameInset" minX="56" minY="62" width="117" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="N39-sc-Gep"/>
+                        <constraint firstAttribute="width" constant="200" id="ehm-dq-tm0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Psu-5v-JiJ">
+                    <frame key="frameInset" minX="303" minY="67" width="51" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="JDq-d7-TkW"/>
+                        <constraint firstAttribute="width" constant="49" id="ylL-36-fvq"/>
+                    </constraints>
+                    <connections>
+                        <action selector="beatifuLoggle:" destination="-1" eventType="valueChanged" id="Uys-RY-GOx"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美颜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXQ-ic-x0N">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="3tV-RW-MCH"/>
+                        <constraint firstAttribute="width" constant="35" id="jIG-sB-EMz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s21-4Z-iBL">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ItA-fi-ajN"/>
+                    </constraints>
+                    <state key="normal" title="开始直播"/>
+                    <connections>
+                        <action selector="startPlayer:" destination="-1" eventType="touchUpInside" id="pZQ-5Z-fYi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmL-2C-g3c">
+                    <frame key="frameInset" minX="200" minY="202" width="91" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="结束直播"/>
+                    <connections>
+                        <action selector="stopPlay:" destination="-1" eventType="touchUpInside" id="lhM-Vr-iXI"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="s21-4Z-iBL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="164" id="UNi-5G-kYp"/>
+                <constraint firstItem="yXQ-ic-x0N" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="ZAB-HZ-cS0"/>
+                <constraint firstItem="Psu-5v-JiJ" firstAttribute="top" secondItem="yXQ-ic-x0N" secondAttribute="bottom" constant="19" id="co9-CH-tjm"/>
+                <constraint firstItem="Psu-5v-JiJ" firstAttribute="trailing" secondItem="yXQ-ic-x0N" secondAttribute="trailing" id="dEU-Ys-vxr"/>
+                <constraint firstItem="MJv-Yb-Xts" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="56" id="dol-Pu-ST6"/>
+                <constraint firstItem="s21-4Z-iBL" firstAttribute="top" secondItem="MJv-Yb-Xts" secondAttribute="bottom" constant="30" id="q4A-2u-Jrp"/>
+                <constraint firstAttribute="trailing" secondItem="yXQ-ic-x0N" secondAttribute="trailing" constant="34" id="qPS-UH-Fke"/>
+                <constraint firstItem="MJv-Yb-Xts" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="62" id="x40-YK-blV"/>
+                <constraint firstAttribute="trailing" secondItem="s21-4Z-iBL" secondAttribute="trailing" constant="109" id="zl0-hY-Mxk"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="34.5" y="95.5"/>
+        </view>
+    </objects>
+</document>

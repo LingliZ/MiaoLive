@@ -9,7 +9,8 @@
 #import "MLTabbarController.h"
 #import "MLMineController.h"
 #import "MLHomeController.h"
-#import "MLLiveController.h"
+#import "MLShowTimeController.h"
+#import "ShowTimeViewController.h"
 #import "MLNavigationController.h"
 @interface MLTabbarController ()
 
@@ -30,9 +31,12 @@
                        imageName:@"toolbar_home"
                selectedImageName:@"toolbar_home_sel"];
     //直播
-    [self configWithChildVCClass:NSClassFromString(@"MLLiveController")
+    [self configWithChildVCClass:NSClassFromString(@"MLShowTimeController")
                        imageName:@"toolbar_live"
                selectedImageName:@"toolbar_live"];
+    
+    
+    
     //个人
     [self configWithChildVCClass:NSClassFromString(@"MLMineController")
                        imageName:@"toolbar_me"

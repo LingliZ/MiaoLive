@@ -61,7 +61,7 @@
 		03D905161DEFFAEA00350569 /* MLTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905151DEFFAEA00350569 /* MLTabbarController.m */; };
 		03D905241DF001C400350569 /* MLAppConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905231DF001C400350569 /* MLAppConst.m */; };
 		03D905281DF00C6D00350569 /* MLAppSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905271DF00C6D00350569 /* MLAppSkin.m */; };
-		03D9052E1DF00FAB00350569 /* MLLiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9052D1DF00FAB00350569 /* MLLiveController.m */; };
+		03D9052E1DF00FAB00350569 /* MLShowTimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D9052D1DF00FAB00350569 /* MLShowTimeController.m */; };
 		03D905351DF00FE200350569 /* MLMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905341DF00FE200350569 /* MLMineController.m */; };
 		03D905381DF011B300350569 /* MLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905371DF011B300350569 /* MLNavigationController.m */; };
 		03D905641DF01E3F00350569 /* MLHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905631DF01E3F00350569 /* MLHttpTool.m */; };
@@ -79,6 +79,9 @@
 		03D905851DF0242200350569 /* MLLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D905841DF0242200350569 /* MLLoginController.m */; };
 		03D905871DF0253B00350569 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D905861DF0253B00350569 /* libbz2.tbd */; };
 		03D905891DF0254B00350569 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D905881DF0254B00350569 /* libz.tbd */; };
+		03DB05C11DF59AC8008C724E /* MLShowTimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DB05C01DF59AC8008C724E /* MLShowTimeController.xib */; };
+		03F2CCFB1DF6EFE7004AE262 /* ShowTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2CCF91DF6EFE7004AE262 /* ShowTimeViewController.m */; };
+		03F2CCFC1DF6EFE7004AE262 /* ShowTimeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F2CCFA1DF6EFE7004AE262 /* ShowTimeViewController.storyboard */; };
 		03F515781DF061440087E3CE /* login_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 03D905681DF021EB00350569 /* login_video.mp4 */; };
 		03F515791DF061440087E3CE /* loginmovie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 03D905691DF021EB00350569 /* loginmovie.mp4 */; };
 		7EBAEA2A0FC9F633F4BC71A0 /* libPods-MiaoLive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A843F27631D36E42481B57A /* libPods-MiaoLive.a */; };
@@ -208,8 +211,8 @@
 		03D905251DF003A300350569 /* MLAppDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLAppDefine.h; sourceTree = "<group>"; };
 		03D905261DF00C6D00350569 /* MLAppSkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLAppSkin.h; sourceTree = "<group>"; };
 		03D905271DF00C6D00350569 /* MLAppSkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLAppSkin.m; sourceTree = "<group>"; };
-		03D9052C1DF00FAB00350569 /* MLLiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLLiveController.h; sourceTree = "<group>"; };
-		03D9052D1DF00FAB00350569 /* MLLiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLiveController.m; sourceTree = "<group>"; };
+		03D9052C1DF00FAB00350569 /* MLShowTimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLShowTimeController.h; sourceTree = "<group>"; };
+		03D9052D1DF00FAB00350569 /* MLShowTimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLShowTimeController.m; sourceTree = "<group>"; };
 		03D905331DF00FE200350569 /* MLMineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMineController.h; sourceTree = "<group>"; };
 		03D905341DF00FE200350569 /* MLMineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMineController.m; sourceTree = "<group>"; };
 		03D905361DF011B300350569 /* MLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNavigationController.h; sourceTree = "<group>"; };
@@ -233,6 +236,10 @@
 		03D905841DF0242200350569 /* MLLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLLoginController.m; sourceTree = "<group>"; };
 		03D905861DF0253B00350569 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		03D905881DF0254B00350569 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		03DB05C01DF59AC8008C724E /* MLShowTimeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLShowTimeController.xib; sourceTree = "<group>"; };
+		03F2CCF81DF6EFE7004AE262 /* ShowTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTimeViewController.h; sourceTree = "<group>"; };
+		03F2CCF91DF6EFE7004AE262 /* ShowTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTimeViewController.m; sourceTree = "<group>"; };
+		03F2CCFA1DF6EFE7004AE262 /* ShowTimeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowTimeViewController.storyboard; sourceTree = "<group>"; };
 		710A6E2A392EBDEB9B37262D /* Pods-MiaoLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiaoLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiaoLive/Pods-MiaoLive.debug.xcconfig"; sourceTree = "<group>"; };
 		8A843F27631D36E42481B57A /* libPods-MiaoLive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MiaoLive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9192477895C6212928E5E0C5 /* Pods-MiaoLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiaoLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiaoLive/Pods-MiaoLive.release.xcconfig"; sourceTree = "<group>"; };
@@ -532,10 +539,14 @@
 		03D904261DEFF65800350569 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				03F2CCF81DF6EFE7004AE262 /* ShowTimeViewController.h */,
+				03F2CCF91DF6EFE7004AE262 /* ShowTimeViewController.m */,
+				03F2CCFA1DF6EFE7004AE262 /* ShowTimeViewController.storyboard */,
 				031D8E7A1DF292D00069C4DA /* NSSafeObject.h */,
 				031D8E7B1DF292D00069C4DA /* NSSafeObject.m */,
-				03D9052C1DF00FAB00350569 /* MLLiveController.h */,
-				03D9052D1DF00FAB00350569 /* MLLiveController.m */,
+				03D9052C1DF00FAB00350569 /* MLShowTimeController.h */,
+				03D9052D1DF00FAB00350569 /* MLShowTimeController.m */,
+				03DB05C01DF59AC8008C724E /* MLShowTimeController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -851,10 +862,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03F2CCFC1DF6EFE7004AE262 /* ShowTimeViewController.storyboard in Resources */,
 				03F515781DF061440087E3CE /* login_video.mp4 in Resources */,
 				03F515791DF061440087E3CE /* loginmovie.mp4 in Resources */,
 				031D8E7E1DF296300069C4DA /* danmu.plist in Resources */,
 				031D8E2E1DF2669F0069C4DA /* MLHotCell.xib in Resources */,
+				03DB05C11DF59AC8008C724E /* MLShowTimeController.xib in Resources */,
 				031D8E8C1DF2AFCA0069C4DA /* MLAnchorView.xib in Resources */,
 				03D903FD1DEFE27700350569 /* LaunchScreen.storyboard in Resources */,
 				035A1C591DF4133D009E56AC /* LICENSE in Resources */,
@@ -950,8 +963,9 @@
 				035A1C521DF4133D009E56AC /* BarrageFloatSprite.m in Sources */,
 				031D8E141DF25BB60069C4DA /* ALinSelectedView.m in Sources */,
 				035A1C501DF4133D009E56AC /* BarrageLoader.m in Sources */,
+				03F2CCFB1DF6EFE7004AE262 /* ShowTimeViewController.m in Sources */,
 				035A1C4E1DF4133D009E56AC /* BarrageRenderer.m in Sources */,
-				03D9052E1DF00FAB00350569 /* MLLiveController.m in Sources */,
+				03D9052E1DF00FAB00350569 /* MLShowTimeController.m in Sources */,
 				03D905351DF00FE200350569 /* MLMineController.m in Sources */,
 				035A1C4A1DF4133D009E56AC /* BarrageCanvas.m in Sources */,
 				031D8E101DF25B990069C4DA /* MLHotController.m in Sources */,
@@ -1123,6 +1137,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y9P69M8RTC;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1142,6 +1157,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y9P69M8RTC;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

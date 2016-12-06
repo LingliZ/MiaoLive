@@ -14,6 +14,19 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - CocoaAsyncSocket (7.4.3):
+    - CocoaAsyncSocket/All (= 7.4.3)
+  - CocoaAsyncSocket/All (7.4.3):
+    - CocoaAsyncSocket/GCD
+    - CocoaAsyncSocket/RunLoop
+  - CocoaAsyncSocket/GCD (7.4.3)
+  - CocoaAsyncSocket/RunLoop (7.4.3)
+  - LFLiveKit (1.5.2):
+    - CocoaAsyncSocket (~> 7.4.1)
+    - librtmp-iOS (~> 1.1.0)
+    - LMGPUImage (~> 0.1.9)
+  - librtmp-iOS (1.1.0)
+  - LMGPUImage (0.1.9)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - PureLayout (3.0.2)
@@ -24,6 +37,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - LFLiveKit (< 1.6)
   - MJExtension
   - MJRefresh
   - PureLayout
@@ -32,12 +46,16 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
+  LFLiveKit: 24e1514bb127a686da54c07ba729b34f7ca96e5b
+  librtmp-iOS: bfe6a2978e01ac97160ede5d3ccde9e3c1d1ee58
+  LMGPUImage: 8e2e5d0f7065953eb7812de842db4c87d59abf09
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 900b12d466807304518cd5cd62ac0f045d5a8587
+PODFILE CHECKSUM: 12877cd6b9ac6c768c6ad24322ffd15a158b2a2c
 
 COCOAPODS: 1.0.1

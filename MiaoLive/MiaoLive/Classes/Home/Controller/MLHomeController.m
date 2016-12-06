@@ -12,6 +12,7 @@
 #import "MLFocusAnchorController.h"
 #import "ALinSelectedView.h"
 #import "MLWebViewController.h"
+#import "ShowTimeViewController.h"
 
 @interface MLHomeController ()<UIScrollViewDelegate>
 /** 热门 */
@@ -87,6 +88,17 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_15x14"] style:UIBarButtonItemStyleDone target:nil action:nil];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"head_crown_24x24"] style:UIBarButtonItemStyleDone target:self action:@selector(rankCrown)];
     [self setupTopMenu];
+    
+    UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    [self.view addSubview:addBtn];
+    addBtn.frame = CGRectMake(100, 100, 60, 50);
+    [addBtn addTarget:self action:@selector(addBtnClick) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)addBtnClick{
+    ShowTimeViewController *showTimeVc = [UIStoryboard storyboardWithName:NSStringFromClass([ShowTimeViewController class]) bundle:nil].instantiateInitialViewController;
+    [self presentViewController:showTimeVc animated:YES completion:nil];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
